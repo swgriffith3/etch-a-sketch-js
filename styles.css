@@ -1,3 +1,16 @@
-body {
-  background-color: aqua;
+#grid {
+  display: grid;
+  grid-template-columns: repeat(16, auto);
+  grid-template-rows: repeat(16, auto);
+  background-color: chocolate;
+  width: 0;
+  height: 0;
+}
+
+#div-box {
+  width: 30px;
+  height: 30px;
+  background-color: brown;
+  border: 1px;
+  border-style: solid;
 }
