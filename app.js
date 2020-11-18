@@ -11,3 +11,8 @@ hover.addEventListener('mouseover', function (e) {
   e.target.style.background = 'aqua';
   console.log(e.target);
 });
+
+function reset() {
+  let gridPix = grid.querySelectorAll('div');
+  gridPix.forEach((gridPix) => (gridPix.style.backgroundColor = 'white'));
+}
