@@ -9,7 +9,6 @@ let hover = document.getElementById('grid');
 
 hover.addEventListener('mouseover', function (e) {
   e.target.style.background = 'aqua';
-  console.log(e.target);
 });
 
 function reset() {
