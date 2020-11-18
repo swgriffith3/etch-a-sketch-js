@@ -13,6 +13,6 @@ hover.addEventListener('mouseover', function (e) {
 });
 
 function reset() {
-  let gridPix = grid.querySelectorAll('div');
-  gridPix.forEach((gridPix) => (gridPix.style.backgroundColor = 'white'));
+  let gridClear = grid.querySelectorAll('div');
+  gridClear.forEach((gridClear) => (gridClear.style.backgroundColor = 'white'));
 }
