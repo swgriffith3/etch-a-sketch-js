@@ -1,9 +1,14 @@
-for (let i = 0; i < 256; i++) {
-  const div = document.createElement('div');
-  div.setAttribute('id', 'div-box');
-  div.setAttribute('class', 'divWhite');
-  grid.appendChild(div);
+function createGrid(gridNum) {
+  let gridSize = gridNum * gridNum;
+  for (let i = 0; i < gridSize; i++) {}
 }
+
+// for (let i = 0; i < 256; i++) {
+//   const div = document.createElement('div');
+//   div.setAttribute('id', 'div-box');
+//   div.setAttribute('class', 'divWhite');
+//   grid.appendChild(div);
+// }
 
 let hover = document.getElementById('grid');
 
@@ -16,10 +21,12 @@ function reset() {
   gridClear.forEach((gridClear) => (gridClear.style.backgroundColor = 'white'));
 }
 
-function gridPrompt() {
-  let button = document.getElementById('boxSize');
-  button.addEventListener('click', () => {
-    let size = prompt('Please choose grid size 1 - 10000');
-    size = parseInt(size);
-  });
+let boxSize = document.getElementById('boxSize');
+boxSize.addEventListener('click', gridSize);
+
+function gridSize() {
+  let size = prompt('Enter a number upto 1000');
+  return size;
 }
+
+console.log(size);
