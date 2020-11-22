@@ -14,16 +14,15 @@ function sizePrompt() {
 
 const grid = document.getElementById('grid');
 
-function createGrid(rows, cols) {
+function createGrid(gridSize) {
   gridNum = gridSize * gridSize;
-  grid.style.setProperty('--grid-rows', rows);
-  grid.style.setProperty('--grid-cols', cols);
-
   for (let i = 0; i < gridNum; i++) {
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
     let div = document.createElement('div');
     div.setAttribute('id', 'div-box');
     div.setAttribute('class', 'div-white');
-    grid.appendChild(div);
+    grid.insertAdjacentElement('beforeend', div);
   }
 }
 
@@ -38,3 +37,13 @@ function resetColor() {
   let gridClear = grid.querySelectorAll('.div-white');
   gridClear.forEach((gridClear) => (gridClear.style.backgroundColor = 'white'));
 }
+
+function resetSize() {
+  let gridPix = grid.querySelectorAll('div');
+  gridPix.forEach((gridPix) => gridPix.remove());
+  sizePrompt();
+  createGrid(gridSize, gridSize);
+}
+
+let sizeBtn = document.getElementById('size-btn');
+sizeBtn.addEventListener('click', resetSize);
